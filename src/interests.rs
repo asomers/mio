@@ -109,17 +109,14 @@ impl fmt::Debug for Interests {
     fn fmt(&self, fmt: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut one = false;
         if self.is_readable() {
-            if one {
-                write!(fmt, " | ")?
-            }
-            write!(fmt, "{}", "READABLE")?;
+            write!(fmt, "READABLE")?;
             one = true
         }
         if self.is_writable() {
             if one {
                 write!(fmt, " | ")?
             }
-            write!(fmt, "{}", "WRITABLE")?;
+            write!(fmt, "WRITABLE")?;
             one = true
         }
         #[cfg(any(
@@ -133,7 +130,7 @@ impl fmt::Debug for Interests {
                 if one {
                     write!(fmt, " | ")?
                 }
-                write!(fmt, "{}", "AIO")?;
+                write!(fmt, "AIO")?;
                 one = true
             }
         }
@@ -143,7 +140,7 @@ impl fmt::Debug for Interests {
                 if one {
                     write!(fmt, " | ")?
                 }
-                write!(fmt, "{}", "LIO")?;
+                write!(fmt, "LIO")?;
                 one = true
             }
         }
